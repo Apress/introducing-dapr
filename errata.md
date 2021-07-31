@@ -1,0 +1,1 @@
+# Errata for *Introducing Distributed Application Runtime (Dapr)*
