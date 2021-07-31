@@ -1,0 +1,18 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+  name: pipelineconfig
+  namespace: default
+spec:
+  httpPipeline:
+    handlers:
+    - name: ratelimit
+      type: middleware.http.ratelimit
+    - name: uppercase
+      type: middleware.http.uppercase
+    # - name: oauth2
+    #   type: middleware.http.oauth2
+    # - name: oauth2clientcreds
+    #   type: middleware.http.oauth2clientcredentials
+    # - name: bearer
+    #   type: middleware.http.bearer      

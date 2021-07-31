@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Dapr.Workflows": {
+      "commandName": "Project",
+      "commandLineArgs": "--workflows-path ..\\..\\..\\..\\Workflows\\workflows",
+      "environmentVariables": {
+        "STORAGE_ACCOUNT_NAME": "<storage-account-name>",
+        "STORAGE_ACCOUNT_KEY": "<storage-account-key>"
+      }
+    }
+  }
+}

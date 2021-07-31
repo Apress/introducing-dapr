@@ -1,0 +1,10 @@
+apiVersion: dapr.io/v1alpha1
+kind: Subscription
+metadata:
+  name: temperature-subscription
+spec:
+  pubsubname: sensors
+  topic: temperature
+  route: /TemperatureMeasurement
+scopes:
+- ac-controller

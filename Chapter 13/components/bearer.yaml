@@ -1,0 +1,12 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: bearer
+spec:
+  type: middleware.http.bearer
+  version: v1
+  metadata:
+  - name: issuerURL
+    value: "https://login.microsoftonline.com/<Tenant-ID>/v2.0"
+  - name: clientID
+    value: "<Client-ID>"

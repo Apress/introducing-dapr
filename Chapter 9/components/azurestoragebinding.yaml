@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: azblob
+  namespace: default
+spec:
+  type: bindings.azure.blobstorage
+  version: v1
+  metadata:
+  - name: storageAccount
+    value: "<storage-account-name>"
+  - name: storageAccessKey
+    value: "<storage-account-key>"
+  - name: "container"
+    value: "images"
+  - name: decodeBase64
+    value: "true"

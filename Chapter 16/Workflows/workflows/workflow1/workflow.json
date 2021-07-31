@@ -1,0 +1,50 @@
+{
+  "definition": {
+    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+    "actions": {
+      "SaveState": {
+        "type": "Http",
+        "inputs": {
+          "method": "POST",
+          "uri": "http://localhost:3500/v1.0/state/statestore",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": [
+            {
+              "key": "workflow-state",
+              "value": "@triggerBody()"
+            }
+          ]
+        },
+        "runAfter": {}
+      },
+      "Response": {
+        "type": "Response",
+        "inputs": {
+          "statusCode": 200,
+          "body": {
+            "value": "@triggerBody()"
+          }
+        },
+        "runAfter": {
+          "SaveState": [
+            "Succeeded"
+          ]
+        }
+      }
+    },
+    "parameters": {},
+    "triggers": {
+      "manual": {
+        "type": "Request",
+        "kind": "Http",
+        "inputs": {
+          "schema": {}
+        }
+      }
+    },
+    "contentVersion": "1.0.0.0",
+    "outputs": {}
+  }
+}

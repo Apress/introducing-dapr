@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: world-deployment
+  labels:
+    app: world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: world
+  template:
+    metadata:
+      labels:
+        app: world
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "world-service"
+        dapr.io/app-port: "8089"
+    spec:
+      containers:
+      - name: world-container
+        image: radoslavgatev/world-service:latest 
+        ports:
+        - containerPort: 8089

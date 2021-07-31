@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dapr.Workflows", "Dapr.Workflows\Dapr.Workflows.csproj", "{E2E22A99-9964-4D7A-B968-DC4B2D37FEEC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Workflows", "Workflows\Workflows.csproj", "{732A1856-407F-40BE-9DE1-415CFDD922A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2E22A99-9964-4D7A-B968-DC4B2D37FEEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2E22A99-9964-4D7A-B968-DC4B2D37FEEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2E22A99-9964-4D7A-B968-DC4B2D37FEEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2E22A99-9964-4D7A-B968-DC4B2D37FEEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{732A1856-407F-40BE-9DE1-415CFDD922A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{732A1856-407F-40BE-9DE1-415CFDD922A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{732A1856-407F-40BE-9DE1-415CFDD922A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{732A1856-407F-40BE-9DE1-415CFDD922A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07107216-B7F7-49BF-9FF5-3BA2EF99B321}
+	EndGlobalSection
+EndGlobal

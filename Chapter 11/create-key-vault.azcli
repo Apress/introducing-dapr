@@ -1,0 +1,19 @@
+az login
+az account list
+az account set -s <subscription id>
+
+LOCATION=<location>
+RESOURCE_GROUP=<your-resource-group>
+KEY_VAULT_NAME=<your-keyvault-name>
+SPN_NAME=<your-spn-name>
+
+az group create --location $LOCATION --resource-group $RESOURCE_GROUP
+az keyvault create --location $LOCATION --name $KEY_VAULT_NAME --resource-group $RESOURCE_GROUP
+
+appId=$(az ad sp create-for-rbac --name $SPN_NAME --create-cert --cert 'SpnCert' --keyvault $KEY_VAULT_NAME --skip-assignment --query 'appId' -o tsv)
+objectId=$(az ad sp show --id $appId --query 'objectId' -o tsv)
+az keyvault set-policy --name $KEY_VAULT_NAME --object-id $objectId --secret-permissions get
+
+az ad sp show --id $appId --query 'appOwnerTenantId' -o tsv
+echo $appId
+az keyvault secret download --vault-name $KEY_VAULT_NAME --name 'SpnCert' --encoding base64 --file spn_cert.pfx

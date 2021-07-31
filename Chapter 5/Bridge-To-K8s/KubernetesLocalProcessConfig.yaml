@@ -1,0 +1,4 @@
+version: 0.1
+env:
+  - name: DAPR_SIDECAR_HOST
+    value: $(services:dapr-sidecar)

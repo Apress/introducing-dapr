@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "bridge-to-kubernetes.service",
+			"type": "bridge-to-kubernetes.service",
+			"service": "greeting-service",
+			"ports": [
+				8090
+			],
+			"targetCluster": "dapr-aks",
+			"targetNamespace": "default",
+			"isolateAs": "myuser-269d"
+		}
+	]
+}

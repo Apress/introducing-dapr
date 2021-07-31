@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: world-deployment
+  labels:
+    app: world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: world
+  template:
+    metadata:
+      labels:
+        app: world
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "world-service"
+        dapr.io/app-port: "8089"
+        dapr.io/log-as-json: "true"
+        dapr.io/log-level: "debug"
+        dapr.io/config: "appconfig"
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+        prometheus.io/path: "/"
+    spec:
+      containers:
+      - name: world-container
+        image: radoslavgatev/world-service:latest 
+        ports:
+        - containerPort: 8089

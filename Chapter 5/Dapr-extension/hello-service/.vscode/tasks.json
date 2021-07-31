@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"appId": "helloservice",
+			"appPort": 8088,
+			"httpPort": 3500,
+			"label": "daprd-debug",
+			"type": "daprd"
+		},
+		{
+			"appId": "helloservice",
+			"label": "daprd-down",
+			"type": "daprd-down"
+		}
+	]
+}

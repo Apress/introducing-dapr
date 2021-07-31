@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+  labels:
+    app: hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "hello-service"
+        dapr.io/app-port: "8088"
+        dapr.io/log-as-json: "true"
+        dapr.io/config: "appconfig"
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9090"
+        prometheus.io/path: "/"
+    spec:
+      containers:
+      - name: hello-container
+        image: radoslavgatev/hello-service:latest 
+        ports:
+        - containerPort: 8088

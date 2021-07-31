@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: weather
+  template:
+    metadata:
+      labels:
+        app: weather
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "weather"
+        dapr.io/app-port: "80"
+    spec:
+      containers:
+      - name: weatherforecast
+        image: radoslavgatev/weatherforecast:latest 
+        ports:
+        - containerPort: 80
