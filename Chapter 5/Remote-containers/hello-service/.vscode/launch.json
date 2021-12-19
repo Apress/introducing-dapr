@@ -7,11 +7,13 @@
         {
             "type": "pwa-node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Launch Program with Dapr",
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/app.js"
+            "program": "${workspaceFolder}/app.js",
+            "preLaunchTask": "daprd-debug",
+            "postDebugTask": "daprd-down"
         }
     ]
 }
